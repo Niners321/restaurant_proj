@@ -29,19 +29,21 @@ function createNav() {
     const nav = document.createElement('div');
     
     const menuButton = document.createElement("button");
-    menuButton.classList.add("button-nav");
+    menuButton.classList.add("menuBtn");
     menuButton.textContent = "Menu";
     menuButton.addEventListener("click", (e) => {
         if (e.target.classList.contains("active")) return;
+        main.textContent = "";
         setActiveButton(menuButton);
         loadMenu();
     });
 
     const contactButton = document.createElement("button");
-    contactButton.classList.add("button-nav");
+    contactButton.classList.add("contactBtn");
     contactButton.textContent = "Contact";
     contactButton.addEventListener("click", (e) => {
         if (e.target.classList.contains("active")) return;
+        main.textContent = "";
         setActiveButton(contactButton);
         loadContact();
     });
@@ -53,16 +55,21 @@ function createNav() {
 }
 
 function setActiveButton(button) {
-    const buttons = document.querySelectorAll(".button-nav");
-  
+    const buttons = document.querySelectorAll("button");
+
+
     buttons.forEach((button) => {
       if (button !== this) {
         button.classList.remove("active");
+
+
       }
     });
   
     button.classList.add("active");
+
   }
+
 
   function createMain() {
     const main = document.createElement("div");
@@ -94,6 +101,7 @@ function initializeWebsite() {
 
     loadNav();
     loadHome();
+    setActiveButton(document.querySelector(".button-nav"));
   }
 
 
