@@ -3,10 +3,10 @@ function createContact() {
     contact.classList.add('contact')
 
     const phoneNumber = document.createElement('p')
-    phoneNumber.textContent = '123-456-7890'
+    phoneNumber.textContent = 'Phone Number: 123-456-7890'
 
     const address = document.createElement('p')
-    address.textContent = '123 Main St, Everytown, TX USA'
+    address.textContent = 'Address: 123 Main St, Everytown, TX USA'
 
     contact.appendChild(phoneNumber)
     contact.appendChild(address)

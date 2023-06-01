@@ -16,8 +16,8 @@ function createHomePage() {
     const summary = document.createElement('p');
     summary.innerText = "Dina's Diner was established in 1952 when Dina became an empty nester and missed being able to cook delicious meals for more than just her and her husband. Dina's Diner has been a pillar of this small town and you will not find any finer food."
 
-    header.appendChild(coffeeImage);
     header.appendChild(dinerTitle);
+    header.appendChild(coffeeImage);
     header.appendChild(summary);
     
    return header;
@@ -27,6 +27,7 @@ function createHomePage() {
 function createNav() {
 
     const nav = document.createElement('div');
+    nav.classList.add('nav-container');
     
     const menuButton = document.createElement("button");
     menuButton.classList.add("menuBtn");

@@ -1,3 +1,13 @@
+*{
+    background-color: rgb(255, 230, 234);
+    font-family: 'Quicksand', sans-serif;
+
+}
+
+body{
+    padding: 50px 100px 50px 100px;
+
+}
 
 .coffee-img{
     height: 200px;
@@ -10,7 +20,34 @@
     align-items: center;
 }
 
+
 .button-nav.active {
     border-bottom: 2px solid black;
-  }
+}
 
+.nav-container{
+    display: flex;
+    align-content: center;
+    justify-content: center;
+
+
+}
+
+.main{
+    text-align: center;
+}
+
+
+button{
+    height: 25px;
+    width: 80px;
+    margin-right: 10px;
+}
+
+h2{
+    text-decoration: underline; 
+}
+
+h1{
+    font-size: 3rem;
+}
