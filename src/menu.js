@@ -1,32 +1,58 @@
 function createMenu() {
     const menu = document.createElement('div');
-    menu.classList.add('menu-container')
-}
+    menu.classList.add('menu')
+
+    menu.appendChild(createMenuItem("Pancakes",
+    "Two buttermilk pancakes, two eggs your way and a side of breakfast meat" ));
+
+    menu.appendChild(createMenuItem("French Toast",
+    "Sliced brioche stuffed with sweet cream cheese glaze, topped with chocolate, strawberries, toasted coconut flakes, vanilla anglaise"));
+
+    menu.appendChild(createMenuItem("Waffles", 
+    "Fluffy, sugar dusted waffle served with whipped butter."));
+
+    menu.appendChild(createMenuItem("Classic Breakfast", 
+    "Two eggs your way, a side of breakfast meat, breakfast potatoes and your choice of baked good"));
+
+    menu.appendChild(createMenuItem("Egg Benedict", 
+    "Canadian bacon and two poached eggs over a toasted english muffin served with hollandaise sauce."));
+
+    menu.appendChild(createMenuItem("Biscuits and Gravy",
+    "Two buttermilk biscuits smothered in sausage gravy" ));
+
+    menu.appendChild(createMenuItem("Breakfast Sandwich", 
+    "English muffin filled with egg, your choice of cheese, and your choice of breakfast meat."));
+
+    menu.appendChild(createMenuItem("Breakfast Tacos", 
+    "3 flour or corn tortillas filled with scrambled eggs, potatoes and cheese. Served with salsa."));
+
+    menu.appendChild(createMenuItem("Migas",
+    "Eggs scrambled with tortilla strips, jalapenos, chorizo, onions, tomatoes, cheese and avocado. Served with black beans and a side of tortillas."));
+
+
+};
+
+function createMenuItem(name, description) {
+    const menuItem = document.createElement("div");
+    menuItem.classList.add("menu-item");
+  
+    const foodName = document.createElement("h2");
+    foodName.textContent = name;
+  
+    const foodDescription = document.createElement("p");
+    foodDescription.textContent = description;
+
+    menuItem.appendChild(foodName);
+    menuItem.appendChild(foodDescription);
+
+    return menuItem;
+};
+
+function loadMenu() {
+    const main = document.getElementById("main");
+
+    main.appendChild(createMenu());
+};
+  
+  export default loadMenu;
    
-   
-   
-   <div id="menu-container">
-        <div id="beverages">
-            <h2>Beverages</h2>
-            <p id="bev-option">Latte</p>
-            <p id="bev-option">Drip Coffee</p>
-            <p id="bev-option">Hot Chocolate</p>
-            <p id="bev-option">Orange Juice</p>
-            <p id="bev-option">Milk</p>
-            <p id="bev-option">Sodas</p>
-        </div>
-        <div id="food">
-            <h2>Meals</h2>
-            <p id="food-option">Pancakes</p>
-            <p id="food-option">French Toast</p>
-            <p id="food-option">Waffles</p>
-            <p id="food-option">Classic Breakfast</p>
-            <p id="food-option">Egg Benedict</p>
-            <p id="food-option">Omlette</p>
-            <p id="food-option">Biscuits and Gravy</p>
-            <p id="food-option">Breakfast Sandwich</p>
-            <p id="food-option">Breakfast Tacos</p>
-            <p id="food-option">Chilaquiles</p>
-            <p id="food-option">Migas</p>
-        </div>
-    </div>

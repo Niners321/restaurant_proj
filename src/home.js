@@ -1,3 +1,6 @@
+import loadMenu from "./menu";
+import loadContact from "./contact";
+
 function createHomePage() {
     const header = document.createElement('div');
     header.classList.add('header-container')
@@ -17,15 +20,83 @@ function createHomePage() {
     header.appendChild(dinerTitle);
     header.appendChild(summary);
     
- return header;
+   return header;
 };
 
 
-function loadHome() {
-    const main = document.getElementById("content");
-    main.textContent = "";
-    main.appendChild(createHomePage());
-    return main
-  };
+function createNav() {
 
-  export default loadHome;
+    const nav = document.createElement('div');
+    
+    const menuButton = document.createElement("button");
+    menuButton.classList.add("button-nav");
+    menuButton.textContent = "Menu";
+    menuButton.addEventListener("click", (e) => {
+        if (e.target.classList.contains("active")) return;
+        setActiveButton(menuButton);
+        loadMenu();
+    });
+
+    const contactButton = document.createElement("button");
+    contactButton.classList.add("button-nav");
+    contactButton.textContent = "Contact";
+    contactButton.addEventListener("click", (e) => {
+        if (e.target.classList.contains("active")) return;
+        setActiveButton(contactButton);
+        loadContact();
+    });
+
+    nav.appendChild(menuButton);
+    nav.appendChild(contactButton);
+
+    return nav
+}
+
+function setActiveButton(button) {
+    const buttons = document.querySelectorAll(".button-nav");
+  
+    buttons.forEach((button) => {
+      if (button !== this) {
+        button.classList.remove("active");
+      }
+    });
+  
+    button.classList.add("active");
+  }
+
+  function createMain() {
+    const main = document.createElement("div");
+    main.classList.add("main");
+    main.setAttribute("id", "main");
+    return main;
+  }
+
+
+function loadHome() {
+    const home = document.getElementById("header");
+
+    home.appendChild(createHomePage());
+
+};
+
+function loadNav() {
+    const nav = document.getElementById("nav");
+
+    nav.appendChild(createNav());
+    return nav
+};
+
+
+function initializeWebsite() {
+    const content = document.getElementById("content");
+    
+    content.appendChild(createMain());
+
+    loadNav();
+    loadHome();
+  }
+
+
+  export default initializeWebsite;
+
+
