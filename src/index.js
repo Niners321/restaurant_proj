@@ -5,5 +5,3 @@ import loadMenu from "./menu.js";
 import loadContact from "./contact.js";
 
 initializeWebsite();
-loadMenu();
-loadContact();

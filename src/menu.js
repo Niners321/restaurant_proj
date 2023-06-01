@@ -1,5 +1,5 @@
 function createMenu() {
-    const menu = document.createElement('div');
+    const menu = document.createElement('div')
     menu.classList.add('menu')
 
     menu.appendChild(createMenuItem("Pancakes",
@@ -29,7 +29,7 @@ function createMenu() {
     menu.appendChild(createMenuItem("Migas",
     "Eggs scrambled with tortilla strips, jalapenos, chorizo, onions, tomatoes, cheese and avocado. Served with black beans and a side of tortillas."));
 
-
+    return menu;
 };
 
 function createMenuItem(name, description) {
